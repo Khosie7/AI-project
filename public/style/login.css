@@ -1,0 +1,108 @@
+body{
+    background: url(../img/img2.png) no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    height: auto;
+    font-family: "Exo 2" ;
+}
+
+/* .logo{
+    display: flex;
+    flex-direction: row;
+} */
+
+.xai{
+    width: 30px;  
+    height: 30px; 
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.links ul{
+
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content:space-around;
+    align-content: space-around;
+    list-style: none;
+}
+
+li a{
+    text-decoration: none;
+    padding: 10px;
+    color: #6495ed;
+}
+
+li a:hover{
+    color: #5e8fce; 
+    text-decoration: underline; 
+}
+
+.container{
+    border: 1px solid #6495ed;
+    box-shadow: 10px 10px 5px #333333;
+    border-radius: 10px;
+    margin-top: 90px;
+    margin-left: 500px;
+    width: 300px;
+    height: 350px;
+    padding: 10px;
+}
+
+.email, .password, .submit{
+    padding: 15px;  
+}
+
+.email, .password{
+    margin-left: 20px;
+}
+
+label, h1{
+    color: #5e8fce;
+}
+
+h1{
+    margin-left: 100px;
+
+}
+
+input{
+    width: 200px;
+    padding: 10px;
+}
+
+.forgot{
+    text-decoration: none;
+    color: #8b99ad;
+    font-size: small;
+    margin-left: 130px;
+}
+
+/* .submit{
+    padding: 10px;
+    margin-left: 50px;
+} */
+
+.submit{
+    padding: 1rem;
+    background: #e6e6e6;
+    border-radius: 10px;
+    border:  #5e8fce;
+    margin-left: 50px;
+    margin-top: 15px;
+    color: #5e8fce;
+    font-family: "Exo 2" ;
+    /* transition-duration: 0.4s; */
+}
+
+.submit:hover{
+    background: linear-gradient(45deg, #333333, #5e8fce);
+    color: #5e8fce;  
+}

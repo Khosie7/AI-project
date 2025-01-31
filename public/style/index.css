@@ -1,0 +1,54 @@
+body{
+    background: url(../img/img2.png) no-repeat fixed;
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    height: auto;
+    font-family: "Exo 2" ;
+    
+}
+
+.xai{
+    width: 30px;  
+    height: 30px; 
+}
+
+.texts{
+    margin-top: 130px;
+    margin-left: 550px;
+    color: #6495ed;
+}
+
+.texts h4{
+    color: #8b99ad;
+    margin-left: 25px;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.links ul{
+
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content:space-around;
+    align-content: space-around;
+    list-style: none;
+}
+
+li a{
+    text-decoration: none;
+    padding: 10px;
+    color: #6495ed;
+}
+
+li a:hover{
+    color: #5e8fce; 
+    text-decoration: underline; 
+}
+

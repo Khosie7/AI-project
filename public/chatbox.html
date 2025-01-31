@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbox</title>
+    <link rel="stylesheet" href="./style/chatbox.css">
+</head>
+<body>
+    <div class="container">
+        <div class="history">
+            <div class="bar">
+                <img src="./img/icons8-search.svg" alt="">
+                <img src="./img/icons8-pen-squared-32.png" alt="">
+            </div>
+            <div>
+                <p>Your chat history..</p>
+            </div>
+        </div>  
+        
+        <div class="box" id="box">
+            <div class="nav">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./img/X.svg" alt="logo" class="xai" > 
+                        <img src="./img/AI.svg" alt="logo" class="xai">
+                    </a>
+                </div>
+                <div class="log-out">
+                        <a href="login.html" title="logout"><img src="./img/logout.svg" alt=""></a>
+                </div>
+            </div>
+        
+            <div class="user" id="user">
+                <div class="userInput" id="user-box"></div>  
+                <div class="userName" id="userName"></div>  
+            </div>
+        
+            <div class="ai">
+                <div class="aiName">XAI</div>
+                <div class="aiResponse" id="ai-response"></div>
+            </div>
+        
+        
+            <div class="prompt-box">
+                <form action="/prompt" method="post" id="form">
+                    <input name="prompt" id="userPrompt" placeholder="Type your prompt here.." >
+                    <button type="submit" class="label">
+                        <img src="./img/Vector.svg" class="btn-img" alt="submit">
+                    </button>
+                </form>
+            </div>
+        </div>
+    
+    
+    </div>
+
+    <script src="./scripts/js.js"></script>
+</body>
+</html>
