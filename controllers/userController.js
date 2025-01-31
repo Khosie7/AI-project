@@ -39,7 +39,7 @@ const SignUp = async (req, res) =>{
                   const userKey = process.env.USER_KEY
                   const token = jwt.sign({ email }, userKey, {expiresIn: "1h"})
 
-                  const verifyLink = `http://localhost:4000/verify?token=${token}`
+                  const verifyLink = `https://ai-project-ttwk.onrender.com/verify?token=${token}`
 
                   const mailOptions = {
                     from: process.env.USER_EMAIL,
