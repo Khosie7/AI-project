@@ -1,6 +1,8 @@
+const chatBox = document.getElementById('box')
 const form = document.getElementById('form')
 
 initialSet = false
+aiInitials = false
 
 form.addEventListener('submit', async (e) =>{
     e.preventDefault();
@@ -9,19 +11,19 @@ form.addEventListener('submit', async (e) =>{
     const Input = document.getElementById('userPrompt')
      const userInput = Input.value.trim();
    
-    const userChatBox = document.getElementById('user-box')
-    userChatBox.innerText = userInput
-    console.log(userChatBox)
+    // const userChatBox = document.getElementById('user-box')
+    // userChatBox.innerText = userInput
+    // console.log(userChatBox)
 
-    const userBox = document.getElementById('user')
-    console.log(userBox)
+    // const userBox = document.getElementById('user')
+    // console.log(userBox)
 
-   if (userChatBox) {
-      Input.value = '';
-   }
+  //  if (userChatBox) {
+  //     Input.value = '';
+  //  }
 
     // console.log(userInput)
-    userBox.scrollTop = userBox.scrollHeight
+    // userBox.scrollTop = userBox.scrollHeight
 
     const response = await fetch('/prompt', {
       method: 'POST',
@@ -30,36 +32,89 @@ form.addEventListener('submit', async (e) =>{
     });
     
     const result = await response.json()
-    const aiDiv = document.getElementById('ai-response')
-    aiDiv.innerText = result.response
-    console.log(aiDiv)
+    console.log(result)
+    
+    
+    if (userInput) {
+      appendMsg(userInput)
 
-
-
-
+      userInput.value = '';
+    }
+    
+    
+    
+    
+    
+  })
+  
+  // const password = document.getElementById('password').value.trim()
+  
+  // sessionStorage.setItem('email', email)
+  // sessionStorage.setItem('password', password)
+  
+  // const trial = sessionStorage.getItem(email)
+  // console.log(trial)
+  
+  function appendMsg (userInput) {
+    userDiv = document.createElement('div')
+    userDiv.classList.add('user')
+    
     const email = sessionStorage.getItem('email');
     console.log(email)
+    // Create the initials div
+    const initialsDiv = document.createElement('div');
+    
     
     if (!initialSet) {
-      const initialsDiv = document.getElementById('userName')
+      
+      initialsDiv.classList.add('userName');
       const userName =email.split('@')[0].slice(0,2).toUpperCase()
-      initialsDiv.innerText =userName
+      initialsDiv.textContent = userName;
       initialSet = true
+      
+      // initialsDiv.innerText =userName
+      
     } else{
       console.log('Initials has been set')
     }
+    
+    // Create the text div
+    const textDiv = document.createElement('div');
+    textDiv.classList.add('userInput');
+    textDiv.textContent = userInput;
+    
+    // Append initials and text to the message container
+    userDiv.appendChild(initialsDiv);
+    userDiv.appendChild(textDiv);
+    
+    // create the ai div
+    aiDiv = document.createElement('div')
+    aiDiv.classList.add('ai')
+
+     aiName = document.createElement('div');
+     aiName.classList.add('ai')
+
+     if (!aiInitails) {
+      aiName.textContent = 'XAI' 
+      aiInitials = true
+
+     } else {
+      console.log('AI initial is already occupied.')
+     }
+
+    const aiBox = document.createElement('div');
+    aiBox.textContent = result.response
+    console.log(aiBox)
+
+    aiDiv.appendChild(aiName);
+    aiDiv.appendChild(aiBox);
 
 
+    // Append the message container to the chat container
+    chatBox.appendChild(userDiv);
+    chatBox.appendChild(aiDiv);
 
-})
-
-// const password = document.getElementById('password').value.trim()
-
-// sessionStorage.setItem('email', email)
-// sessionStorage.setItem('password', password)
-
-// const trial = sessionStorage.getItem(email)
-// console.log(trial)
-
-
-
+  
+    // Scroll to the bottom of the chat container
+    chatBox.scrollTop = chatBox.scrollHeight
+}

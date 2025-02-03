@@ -39,13 +39,14 @@ const SignUp = async (req, res) =>{
                   const userKey = process.env.USER_KEY
                   const token = jwt.sign({ email }, userKey, {expiresIn: "1h"})
 
-                  const verifyLink = `https://ai-project-ttwk.onrender.com/verify?token=${token}`
+                  const verifyLink = `https://ai-project-ttwk.onrender.com /verify?token=${token}`
 
                   const mailOptions = {
                     from: process.env.USER_EMAIL,
                     to: email,
                     subject: 'Verify your Email',
-                    html: `<p>Click the link below to verify your email:</p>
+                    html: `<p>Thank you for signing up to Vortex Ai.</p>
+                            <p>Please click the link below to verify your email:</p>
                             <a href="${verifyLink}">${verifyLink}</a>`
                   }
 
