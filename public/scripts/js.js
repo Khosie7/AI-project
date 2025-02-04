@@ -2,7 +2,7 @@ const chatBox = document.getElementById('box')
 const form = document.getElementById('form')
 
 initialSet = false
-aiInitials = false
+aiInitialSet = false
 
 form.addEventListener('submit', async (e) =>{
     e.preventDefault();
@@ -32,7 +32,7 @@ form.addEventListener('submit', async (e) =>{
     });
     
     const result = await response.json()
-    console.log(result)
+    console.log(result.response)
     
     
     if (userInput) {
@@ -94,7 +94,7 @@ form.addEventListener('submit', async (e) =>{
      aiName = document.createElement('div');
      aiName.classList.add('ai')
 
-     if (!aiInitails) {
+     if (!aiInitialSet) {
       aiName.textContent = 'XAI' 
       aiInitials = true
 
