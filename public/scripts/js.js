@@ -38,7 +38,7 @@ form.addEventListener('submit', async (e) =>{
     if (userInput) {
       appendMsg(userInput, result)
 
-      userInput.value = '';
+      Input.value = '';
     }
     
     
@@ -58,11 +58,16 @@ form.addEventListener('submit', async (e) =>{
   function appendMsg (userInput, result) {
     const userDiv = document.createElement('div')
     userDiv.classList.add('user')
+
+    // Create the text div
+    const textDiv = document.createElement('div');
+    textDiv.classList.add('userInput');
+    textDiv.textContent = userInput;
     
-    const email = sessionStorage.getItem('email');
-    console.log(email)
     // Create the initials div
     const initialsDiv = document.createElement('div');
+    const email = sessionStorage.getItem('email');
+    console.log(email)
     
     
     if (!initialSet) {
@@ -78,10 +83,6 @@ form.addEventListener('submit', async (e) =>{
       console.log('Initials has been set')
     }
     
-    // Create the text div
-    const textDiv = document.createElement('div');
-    textDiv.classList.add('userInput');
-    textDiv.textContent = userInput;
     
     // Append initials and text to the message container
     userDiv.appendChild(initialsDiv);
@@ -103,6 +104,7 @@ form.addEventListener('submit', async (e) =>{
      }
 
     const aiBox = document.createElement('div');
+    aiBox.classList.add('aiResponse')
     aiBox.textContent = result.response
     console.log(aiBox)
 
