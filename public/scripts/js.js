@@ -56,7 +56,7 @@ form.addEventListener('submit', async (e) =>{
   // console.log(trial)
   
   function appendMsg (userInput) {
-    userDiv = document.createElement('div')
+    const userDiv = document.createElement('div')
     userDiv.classList.add('user')
     
     const email = sessionStorage.getItem('email');
@@ -88,11 +88,11 @@ form.addEventListener('submit', async (e) =>{
     userDiv.appendChild(textDiv);
     
     // create the ai div
-    aiDiv = document.createElement('div')
+    const aiDiv = document.createElement('div')
     aiDiv.classList.add('ai')
 
-     aiName = document.createElement('div');
-     aiName.classList.add('ai')
+     const aiName = document.createElement('div');
+     aiName.classList.add('aiName')
 
      if (!aiInitialSet) {
       aiName.textContent = 'XAI' 
