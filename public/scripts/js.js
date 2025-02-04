@@ -36,7 +36,7 @@ form.addEventListener('submit', async (e) =>{
     
     
     if (userInput) {
-      appendMsg(userInput)
+      appendMsg(userInput, result)
 
       userInput.value = '';
     }
@@ -55,7 +55,7 @@ form.addEventListener('submit', async (e) =>{
   // const trial = sessionStorage.getItem(email)
   // console.log(trial)
   
-  function appendMsg (userInput) {
+  function appendMsg (userInput, result) {
     const userDiv = document.createElement('div')
     userDiv.classList.add('user')
     
